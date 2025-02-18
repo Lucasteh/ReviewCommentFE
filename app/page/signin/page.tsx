@@ -1,7 +1,22 @@
+'use client';
 import Image from "next/image";
 import "../../_scss/carousel.scss";
+import "../../_scss/testing.scss";
+import { useEffect } from 'react';
 
 export default function signin() {
+   useEffect(() => {
+      const switchBtn = document.getElementById('switchBtn');
+      const container = document.getElementById('container');
+
+      if (switchBtn && container) {
+         switchBtn.addEventListener('click', () => {
+            console.log("here");
+            container.classList.toggle('switch');
+         });
+      }
+   }, []);
+
 
    return (
       <div className="grid gap-4 col-start-1 col-end-3 row-start-1">
@@ -35,6 +50,12 @@ export default function signin() {
             <div className="pot">
                <Image alt="broken" src="https://i.sstatic.net/qgNyF.png?s=328&g=1" width={100} height={100} />
             </div>
+
+            <div className="container" id="container">
+               <div className="box box1 left">Div 1</div>
+               <div className="box box2 right">Div 2</div>
+            </div>
+            <button id="switchBtn">Switch Positions</button>
          </div>
       </div >
    )
