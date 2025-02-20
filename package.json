@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.20",
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
+    "framer-motion": "^12.4.5",
     "iron-session": "^8.0.4",
     "next": "15.1.2",
     "next-auth": "^4.24.11",

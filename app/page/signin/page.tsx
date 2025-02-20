@@ -3,6 +3,7 @@ import Image from "next/image";
 import "../../_scss/carousel.scss";
 import "../../_scss/testing.scss";
 import { useEffect } from 'react';
+import { motion } from "framer-motion";
 
 export default function signin() {
    useEffect(() => {
@@ -19,7 +20,7 @@ export default function signin() {
 
 
    return (
-      <div className="grid gap-4 col-start-1 col-end-3 row-start-1">
+      <div className="grid gap-3 col-start-1 col-end-3 row-start-1">
          <div className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-4 gap-4 text-sm leading-6">
             <div className="flex">
                <a href="/new" className="hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
@@ -46,16 +47,29 @@ export default function signin() {
                   New project
                </a>
             </div>
-
-            <div className="pot">
-               <Image alt="broken" src="https://i.sstatic.net/qgNyF.png?s=328&g=1" width={100} height={100} />
-            </div>
-
             <div className="container" id="container">
                <div className="box box1 left">Div 1</div>
                <div className="box box2 right">Div 2</div>
             </div>
             <button id="switchBtn">Switch Positions</button>
+
+
+         </div>
+         <div style={{ position: "relative", width: "100%", height: "100px", overflow: "hidden" }}>
+            <motion.div
+               animate={{ x: ["0%", "100%", "0%"] }} // Moves left to right
+               transition={{ duration: 5, repeat: Infinity, ease: "linear" }} // Infinite loop
+               style={{
+                  width: "50px",
+                  height: "50px",
+                  background: "lightblue",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+               }}
+            >
+               moving
+            </motion.div>
          </div>
       </div >
    )

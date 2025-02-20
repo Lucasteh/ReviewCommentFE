@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link';
+import "./_scss/testing.scss"
 
 export default function Home() {
   return (
@@ -46,6 +47,23 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div>
+        <div className="flip-box">
+          <div className="flip-box-inner">
+            <div className="flip-box-front">
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={300}
+              height={200}
+            />
+            </div>
+            <div className="flip-box-back">
+              <h2>Paris</h2>
+              <p>What an amazing city</p>
+            </div>
+          </div>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">

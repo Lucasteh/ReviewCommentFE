@@ -13,6 +13,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        move: 'move 2s linear infinite',
+      },
+      keyframes: {
+        move: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100px)' },
+        },
+      },
     },
   },
   plugins: [
